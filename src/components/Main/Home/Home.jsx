@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { listContext } from '../../../context/listContext';
+import Card from './Card';
 
 const Home = () => {
-  return <div>Home</div>;
+  const { pokemonList } = useContext(listContext);
+
+  return (
+    <div>
+      {pokemonList.map((pokemon) => (
+        <Card key={pokemon.id} pokemon={pokemon} />
+      ))}
+    </div>
+  );
 };
 
 export default Home;
+

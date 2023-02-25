@@ -22,14 +22,14 @@ const Search = () => {
     // Set a new timeout to make the fetch request
     debounceTimeoutRef.current = setTimeout(async () => {
       try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}?fields=id,name,sprites,types`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}?fields=id,name,sprites.front_shiny,types`);
         const { id, name, sprites, types } = await response.json();
 
         // Check if the new Pokemon is already present in pokemonList
         const pokemonAlreadyInList = pokemonList.find(pokemon => pokemon.id === id);
         if (!pokemonAlreadyInList) {
           // Add the new Pokemon to the list if it's not already present
-          setPokemonList((prevPokemonList) => [...prevPokemonList, { id, name, sprites, types }]);
+          setPokemonList((prevPokemonList) => [...prevPokemonList, { id, name, sprites: sprites.front_shiny, types }]);
           setPokemonData(null);
         } else {
           setPokemonData({ id, name, sprites, types });
