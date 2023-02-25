@@ -18,15 +18,8 @@ const New = () => {
     );
     if (!pokemonAlreadyInList) {
       // Add the new Pokemon to the list if it's not already present
-      setPokemonList((prevPokemonList) => [
-        ...prevPokemonList,
-        {
-          id: data.id,
-          name: data.name,
-          sprites: data.image,
-          types: [data.typeOne, data.typeTwo]
-        },
-      ]);
+      const types = [{ slot: 1, type: { name: data.typeOne } }, { slot: 2, type: { name: data.typeTwo } }];
+      setPokemonList((prevPokemonList) => [...prevPokemonList, { id: data.id, name: data.name, sprites: data.image, types },]);
       reset();
     } else {
       alert("This Pokemon is already in your list!");
