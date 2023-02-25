@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { listContext } from '../../../context/listContext';
 
-const PokemonForm = () => {
+const New = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch
+    watch,
+    reset
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // Check if the new Pokemon is already present in pokemonList
+    const pokemonAlreadyInList = pokemonList.find(
+      (pokemon) => pokemon.name.toLowerCase() === data.name.toLowerCase()
+    );
+    if (!pokemonAlreadyInList) {
+      // Add the new Pokemon to the list if it's not already present
+      setPokemonList((prevPokemonList) => [
+        ...prevPokemonList,
+        {
+          id: data.id,
+          name: data.name,
+          sprites: data.image,
+          types: [data.typeOne, data.typeTwo]
+        },
+      ]);
+      reset();
+    } else {
+      alert("This Pokemon is already in your list!");
+    }
   };
 
   const typeOne = watch("typeOne");
   const typeTwo = watch("typeTwo");
 
   const isSameType = typeOne && typeTwo && typeOne === typeTwo;
+
+  const { pokemonList, setPokemonList } = useContext(listContext);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -98,5 +120,5 @@ const PokemonForm = () => {
   );
 };
 
-export default PokemonForm;
+export default New;
 
