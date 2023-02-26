@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
-  return <nav>
-  <Link to="/">Home</Link>
-  <Link to="/search">Browser</Link>
-  <Link to="/new">New pokemon!</Link> 
+  return <nav className={"nav-bar"}>
+  <Link to="/">Your pokemon</Link>
+  <Link to="/search">Catch!</Link>
+  <Link to="/new">Create a new pokemon</Link> 
 </nav>;
 };
 

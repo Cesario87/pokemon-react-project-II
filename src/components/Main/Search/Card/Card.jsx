@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ pokemon }) => {
+const Cards = ({ pokemon }) => {
   const { name, id, types, sprites } = pokemon;
 
   const capitalizedFirstLetterName =
@@ -21,18 +21,35 @@ const Card = ({ pokemon }) => {
   const encodedPokemonData = encodeURIComponent(JSON.stringify(pokemonData));
 
   return (
-    <div data-testid="cardRenders">
-      <p>ID: {id}</p>
-      <Link to={`/pokemon/${id}?data=${encodedPokemonData}`}>
-        <h2 data-testid="Card__title">{capitalizedFirstLetterName}</h2>
-      </Link>
-      <img data-testid="Card__img" src={sprites} alt={name} />
-      {type1 && <p>Type 1: {type1}</p>}
-      <p>Type 2: {type2 ? type2 : "none"}</p>
+    // <div data-testid="cardRenders">
+    //   <p>ID: {id}</p>
+    //   <Link to={`/pokemon/${id}?data=${encodedPokemonData}`}>
+    //     <h2 data-testid="Card__title">{capitalizedFirstLetterName}</h2>
+    //   </Link>
+    //   <img data-testid="Card__img" src={sprites} alt={name} />
+    //   {type1 && <p>Type 1: {type1}</p>}
+    //   <p>Type 2: {type2 ? type2 : "none"}</p>
+    // </div>
+    <div data-testid="cardRenders" class="card mb-3" style={{ maxWidth: "100%", height: '30vh', border: '1px solid blue' }}>
+      <div class="row g-0">
+        <div class="col-md-4" style={{ margin: "0 25% 0 0", width: "10%" }}>
+          <img data-testid="Card__img" src={sprites} alt={name} style={{ width: "200px" }} />
+        </div>
+        <div class="col-md-8" style={{ margin: "0 0 0 10%", width: "50%" }}>
+          <div class="card-body">
+            <p>ID: {id}</p>
+            <Link to={`/pokemon/${id}?data=${encodedPokemonData}`}>
+              <h2 data-testid="Card__title">{capitalizedFirstLetterName}</h2>
+            </Link>
+            {type1 && <p>Type 1: {type1}</p>}
+            <p>Type 2: {type2 ? type2 : "none"}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Card;
+export default Cards;
 
 
