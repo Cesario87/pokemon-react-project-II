@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
+.main {
+    background: url('../../../public/assets/cuaderno2.jpg');
+    min-height: 86vh;
+    margin:0px;
+    padding:15px;
+    font-family: 'Calligraffitti', cursive;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1366px) {
+    .main {
+        min-height: 85vh;
+    }
+}

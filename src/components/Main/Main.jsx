@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 
 const Main = () => {
   return (
-    <main>
+    <main className="main">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
