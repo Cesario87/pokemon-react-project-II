@@ -1,0 +1,49 @@
+@import '../utils/variables.scss';
+
+%nav-bar-basic{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:smaller;
+    min-height: 8vh;
+ 
+
+    &>*{
+        color:white;
+    }
+
+    &>a {
+        color: black;
+        text-decoration: none;
+
+        &:hover{
+            color:$pale-orange;
+        }
+    }
+    &>span{
+        font-weight: bolder; 
+        padding: 1% 1%;
+    }
+}
+
+.nav-bar {
+    @extend %nav-bar-basic;
+    background-color: $yellow;
+}
+
+.nav-link {
+    width: 10%;
+    margin-right: 5%;
+}
+
+@media screen and (min-width: 1366px) {
+    .nav-link {
+        width: 20%;
+    }
+
+    %nav-bar-basic{
+        min-height: 10vh;
+        font-size: larger;
+    }
+}
+
