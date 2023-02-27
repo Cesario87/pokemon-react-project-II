@@ -5,12 +5,35 @@
     min-height: 86vh;
     margin:0px;
     padding:15px;
-    font-family: 'Calligraffitti', cursive;
-    font-weight: bold;
+    font-family: 'Calligraffitti';
+    
+
+    h1{
+        font-weight: bold;
+        margin-bottom: 5%;
+    }
+
+    button{
+        font-weight: bold;
+        font-size: 120%;
+        margin-top:5%;
+        height: 8vh;
+        color: rgb(76, 6, 124);
+    }
 }
 
 @media screen and (min-width: 1366px) {
     .main {
         min-height: 85vh;
+
+        h1{
+            margin: 2% 0% 1% 0%;
+        }
+
+        
+        button{
+            margin-top:1%;
+        }
     }
+
 }

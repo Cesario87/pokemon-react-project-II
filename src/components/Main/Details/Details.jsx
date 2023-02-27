@@ -5,10 +5,12 @@ const Details = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const data = JSON.parse(decodeURIComponent(searchParams.get("data")));
-
+  const name = data.name;
+  const capitalizedFirstLetterName = name.charAt(0).toUpperCase() + name.slice(1);
+  
   return (
-    <div>
-      <h2>{data.name}</h2>
+    <div className="formatDetails">
+      <h1>{capitalizedFirstLetterName}</h1>
       <img src={data.image} alt={data.name} />
       <p>ID: {data.id}</p>
       <p>Type 1: {data.typeOne}</p>
