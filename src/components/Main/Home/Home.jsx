@@ -8,10 +8,11 @@ const Home = () => {
   return (
     <div>
       <h1>Caught pokemon will appear here:</h1>
-
+      <div className="cardSpace">
       {pokemonList.map((pokemon) => (
         <Cards key={pokemon.id} pokemon={pokemon} />
       ))}
+      </div>
     </div>
   );
 };

@@ -51,9 +51,9 @@ const Search = () => {
     <div data-testid="searchRenders">
       <h1>Catch a pokemon!!</h1>
 
-      <Form style={{ margin: '0 0 5% 0' }}>
+      <Form className="formatSearch">
         <InputGroup>
-        <InputGroup.Text>（╯°□°）╯︵◓</InputGroup.Text>
+          <InputGroup.Text>（╯°□°）╯︵◓</InputGroup.Text>
           <FormControl
             type="text"
             placeholder="Name goes here..."
@@ -63,10 +63,12 @@ const Search = () => {
           />
         </InputGroup>
       </Form>
-      {pokemonData && <Cards pokemon={pokemonData} />}
-      {pokemonList.map((pokemon) => (
-        <Cards key={pokemon.id} pokemon={pokemon} />
-      ))}
+      <div className="cardSpace">
+        {pokemonData && <Cards pokemon={pokemonData} />}
+        {pokemonList.map((pokemon) => (
+          <Cards key={pokemon.id} pokemon={pokemon} />
+        ))}
+      </div>
     </div>
   );
 };
