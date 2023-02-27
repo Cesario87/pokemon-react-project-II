@@ -1,0 +1,22 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.card.mb-3 {
+    font-weight: bold;
+    font-size: larger;
+    background-color: rgb(255, 255, 246);
+    border: 4px double rgb(202, 48, 63);
+    box-shadow: 4px 4px rgb(177, 175, 175);
+
+    h2{
+        font-weight: bolder;
+        font-size: 150%;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .card.mb-3 {
+        width: 25%;
+        padding-top: 2%;
+    }
+}

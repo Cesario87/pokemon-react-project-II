@@ -36,7 +36,7 @@ const New = () => {
   const { pokemonList, setPokemonList } = useContext(listContext);
 
   return (
-    <div>
+    <div className="formatForm-container">
       <h1>Create your own pokemon!!</h1>
       <form className="formatForm" onSubmit={handleSubmit(onSubmit)}>
         <InputGroup className="mb-3">
