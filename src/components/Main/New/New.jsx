@@ -40,7 +40,7 @@ const New = () => {
       <h1>Create your own pokemon!!</h1>
       <form className="formatForm" onSubmit={handleSubmit(onSubmit)}>
         <InputGroup className="mb-3">
-          <InputGroup.Text id="id-addon" style={{ padding: '0 40px' }}>ID</InputGroup.Text>
+          <InputGroup.Text id="id-addon">ID</InputGroup.Text>
           <Form.Control
             type="number"
             name="id"
@@ -53,7 +53,7 @@ const New = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="name-addon" style={{ padding: '0 34px' }}>Name</InputGroup.Text>
+          <InputGroup.Text id="name-addon">Name</InputGroup.Text>
           <Form.Control
             type="text"
             name="name"
@@ -82,7 +82,7 @@ const New = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="typeOne-addon" style={{ padding: '0 33px' }}>Type 1</InputGroup.Text>
+          <InputGroup.Text id="typeOne-addon">Type 1</InputGroup.Text>
           <Form.Select
             name="typeOne"
             {...register("typeOne", { required: true })}
@@ -113,7 +113,7 @@ const New = () => {
         </InputGroup>
 
         <InputGroup className="mb-3">
-          <InputGroup.Text id="typeTwo-addon" style={{ padding: '0 33px' }}>Type 2</InputGroup.Text>
+          <InputGroup.Text id="typeTwo-addon">Type 2</InputGroup.Text>
           <Form.Select
             name="typeTwo"
             {...register("typeTwo")}

@@ -12,7 +12,7 @@ const Search = () => {
   const debounceTimeoutRef = useRef(null);
 
   const handleInputChange = async (event) => {
-    const value = event.target.value;
+    const value = event.target.value.toLowerCase();
     setInputValue(value);
 
     // Clear any existing timeout

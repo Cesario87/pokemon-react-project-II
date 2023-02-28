@@ -4,6 +4,27 @@
     margin: '0 0 5% 0';
 }
 
+.cardSpace{
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .formatSearch {
+        width: 50%;
+        margin-left: 26vw;  
+      }
+
+      .cardSpace{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5%;
+        margin-top: 2%;
+    }
+}
+
 @media screen and (min-width: 1366px) {
     .formatSearch {
         width: 40%;
