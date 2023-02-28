@@ -21,12 +21,12 @@ const Cards = ({ pokemon }) => {
   const encodedPokemonData = encodeURIComponent(JSON.stringify(pokemonData));
 
   return (
-    <div data-testid="cardRenders" class="card mb-3" style={{ maxWidth: "100%", height: '30vh' }}>
+    <div data-testid="cardRenders" class="card mb-3">
       <div class="row g-0">
-        <div class="col-md-4" style={{ margin: "0 25% 0 0", width: "10%" }}>
-          <img data-testid="Card__img" src={sprites} alt={name} style={{ width: "200px" }} />
+        <div class="col-md-4">
+          <img data-testid="Card__img" src={sprites} alt={name} />
         </div>
-        <div class="col-md-8" style={{ margin: "0 0 0 10%", width: "50%" }}>
+        <div class="col-md-8">
           <div class="card-body">
             <p>ID: {id}</p>
             <Link to={`/pokemon/${id}?data=${encodedPokemonData}`}>
