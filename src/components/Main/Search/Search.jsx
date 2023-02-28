@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import Cards from "./Card";
 import { listContext } from '../../../context/listContext';
-import { Form, InputGroup, FormControl } from 'react-bootstrap';
+import { InputGroup, FormControl } from 'react-bootstrap';
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
@@ -51,7 +51,7 @@ const Search = () => {
     <div data-testid="searchRenders">
       <h1>Catch a pokemon!!</h1>
 
-      <Form className="formatSearch">
+      <div className="formatSearch">
         <InputGroup>
           <InputGroup.Text>（╯°□°）╯︵◓</InputGroup.Text>
           <FormControl
@@ -62,7 +62,7 @@ const Search = () => {
             data-testid="inputText"
           />
         </InputGroup>
-      </Form>
+      </div>
       <div className="cardSpace">
         {pokemonData && <Cards pokemon={pokemonData} />}
         {pokemonList.map((pokemon) => (
